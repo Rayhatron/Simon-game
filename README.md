@@ -1,0 +1,1 @@
+Tip calculator made in html, javascript and sass compiled to css in development version.
