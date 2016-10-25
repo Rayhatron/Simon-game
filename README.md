@@ -1,1 +1,1 @@
-Tip calculator made in html, javascript and sass compiled to css in development version.
+Classic simon game in html 5, css 3, javascript and sass for development.
