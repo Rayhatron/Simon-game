@@ -1,8 +1,8 @@
 {
   "name": "Simon game",
   "version": "1.0.0",
-  "description": "tip calculator in html, scss, css and js",
-  "main": "index.js",
+  "description": "simon game in html, scss, css and js",
+  "main": "js/main.min.js",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^1.0.1",

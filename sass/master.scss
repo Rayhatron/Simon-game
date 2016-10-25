@@ -1,3 +1,42 @@
 
 @import '_base.scss';
 @import '_normalize.scss';
+
+
+@mixin flexbox($direction, $align, $justify){
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
+}
+
+#container{
+	width: 100vw;
+	height: 100vh;
+	background: $baige;
+	@include flexbox(row, center, center);
+
+	#board{
+		width: 500px;
+		height: 500px;
+		background: $black;
+		@include flexbox(row, center, center);
+
+		#colorButtons{
+			width: 450px;
+			height: 450px;
+			background: $green;
+			position: absolute;
+		}
+
+		#mainControls{
+			width: 250px;
+			height: 250px;
+			background: $white;
+			position: absolute;
+			opacity: 0.5;
+		}
+	}
+
+}
+
