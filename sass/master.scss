@@ -3,30 +3,58 @@
 @import '_normalize.scss';
 
 
-@mixin flexbox($direction, $align, $justify){
+@mixin flexbox($direction, $align, $justify, $wrap){
 	display: flex;
 	flex-direction: $direction;
 	align-items: $align;
 	justify-content: $justify;
+	flex-wrap: $wrap;
 }
 
 #container{
 	width: 100vw;
 	height: 100vh;
 	background: $baige;
-	@include flexbox(row, center, center);
+	@include flexbox(row, center, center, no-wrap);
 
 	#board{
 		width: 500px;
 		height: 500px;
-		background: $black;
-		@include flexbox(row, center, center);
+		background: $light-black;
+		border-radius: 100%;
+		@include flexbox(row, center, center, nowrap);
 
 		#colorButtons{
 			width: 450px;
 			height: 450px;
-			background: $green;
+			background: $light-black;
 			position: absolute;
+			overflow: hidden;
+			border-radius: 100%;
+			@include flexbox(column, center, center, wrap);
+
+			div{
+				width: 215px;
+				height: 215px;
+				margin: 10px;
+				background: $baige;
+			}
+
+			#button1{
+				margin: 0 10px 10px 0;
+			}
+
+			#button2{
+				margin: 10px 10px 0 0;
+			}
+
+			#button3{
+				margin: 0 0 10px 10px;
+			}
+
+			#button4{
+				margin: 10px 0 0 10px;
+			}
 		}
 
 		#mainControls{
@@ -34,7 +62,9 @@
 			height: 250px;
 			background: $white;
 			position: absolute;
-			opacity: 0.5;
+		    z-index: 2;
+		    border-radius: 100%;
+		    border: 15px solid #2b2b2b;
 		}
 	}
 
