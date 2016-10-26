@@ -1,20 +1,9 @@
 
 @import '_base.scss';
 @import '_normalize.scss';
+@import '_switch';
 
 
-@mixin flexbox($direction, $align, $justify, $wrap){
-	display: flex;
-	flex-direction: $direction;
-	align-items: $align;
-	justify-content: $justify;
-	flex-wrap: $wrap;
-}
-
-@mixin dimensions($width, $height){
-	width: $width;
-	height: $height;
-}
 
 #container{
 
