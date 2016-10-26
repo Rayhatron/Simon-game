@@ -138,8 +138,23 @@ var app = new Vue({
                 self.blink3 = false;
                 self.blink4 = false;
             }, 1000);*/
-  	}
+  	},
+
+  	resetGame: function(){
+  		var self = this;
+		this.userSequence = [];
+		this.sequence = [];
+		this.count = 0;
+		this.randomSquare = 0;
+		this.i = 0;
+
+		setTimeout(function(){
+			self.startGame();
+		}, 2000);
+  				
+  		}
   }
+  
 
 })
 }

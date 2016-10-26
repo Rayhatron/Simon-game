@@ -65,9 +65,17 @@
 		    border: 15px solid $light-black;
 		    font-family: $open-sans;
 		    
+		    #reset{
+		    	background: $light-black;
+		    	color: #fff;
+		    	border-radius: 10px;
+		    	margin: 0 0 5px 0;
+		    	border: none;
+		    }
 			
 			h1{
 				@include dimensions(100%, 50px);
+				@include flexbox(row, flex-end, center, nowrap);
 				margin: 0;
 				text-align: center;
 
