@@ -1,0 +1,34 @@
+@mixin blinking($r, $g, $b, $alpha1, $alpha2){
+	@keyframes blinking{
+		0% { background: rgba($r, $g, $b, $alpha1); }
+    	100% { background: rgba($r, $g, $b, $alpha2); }
+    }
+
+    -webkit-animation-name: blinking;
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+}
+
+ .blink1{
+    @include blinking(255, 0, 0, 0.3, 1);
+ }
+
+ .blink2{
+    @include blinking(255, 0, 0, 0.3, 1);
+ }
+
+ .blink3{
+    @include blinking(255, 0, 0, 0.3, 1);
+ }
+
+ .blink4{
+    @include blinking(255, 0, 0, 0.3, 1);
+ }
+
+   /*var backgroundInterval = setInterval(function(){
+    $div2blink.toggleClass("backgroundRed");
+ },1500)
+ 
+setInterval( function(){clearInterval(backgroundInterval)}, 3000)*/

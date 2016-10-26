@@ -16,23 +16,23 @@
 	<div id="container">
 		<div id="board">
 			<div id="colorButtons">
-				<div id="button1"></div>
-				<div id="button2"></div>
-				<div id="button3"></div>
-				<div id="button4"></div>
+				<div v-bind:class="{ blink1: blink1 }" id="button1"></div>
+				<div v-bind:class="{ blink2: blink2 }" id="button2"></div>
+				<div v-bind:class="{ blink3: blink3 }" id="button3"></div>
+				<div v-bind:class="{ blink4: blink4 }" id="button4"></div>
 			</div>
 			<div id="mainControls">
 				<h1>Simon</h1>
 
 				<div id="io">
 
-					<div id="display" title="display"></div>
+					<div v-bind:class="{ displayOn: power }" id="display" title="display" >{{ count }}</div>
 
-					<input type="button" class="inputs" id="start" title="start">
+					<input type="button" class="inputs" id="start" title="start" v-on:click="startGame" :disabled="power == false">
 
 					<div id="strict">
-						<input type="radio">
-						<input type="button" class="inputs" id="strictMode" title="enable strict mode">
+						<input type="checkbox" v-model="strictMode" disabled>
+						<input type="button" class="inputs" id="strictMode" title="enable strict mode" v-on:click="toggleStrictMode" :disabled="power == false">
 					</div>
 
 				</div>
@@ -46,15 +46,15 @@
 				<div id="switchContainer">
 					
 					<label class="switch">
-						<input type="checkbox"	id="checkbox" v-model="checked">
+						<input type="checkbox"	id="checkbox" v-model="power">
 						<div class="slider round"></div>
 					</label>
 					
 				</div>
 
 				<div id="power">
-					<label for="slider" v-if="!checked">off</label>
-					<label for="slider" v-if="checked"> on</label>
+					<label for="slider" v-if="!power">off</label>
+					<label for="slider" v-if="power"> on</label>
 				</div>
 
 			</div>
