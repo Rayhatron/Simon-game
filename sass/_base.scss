@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Open+Sans');
+
 $temp-width: 200px;
 $temp-height: 200px;
 $baige:  #F5F1DE;
 $black: #000;
-$white: #fff;
+$off-white: #FDF9F3;
 $green: green;
 $light-black: #2b2b2b;
+$deep-red: #510111;
+$light-red: #B71C1C;
+$open-sans: 'Open Sans', sans-serif;
+$bungee-shade: 'Bungee Shade', cursive;
 
 
 @mixin flexbox($direction, $align, $justify, $wrap){

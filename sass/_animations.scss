@@ -9,15 +9,33 @@
     -webkit-animation-duration: 1s;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: ease;
+
+    -moz-animation-name: blinking;
+    -moz-animation-direction: normal;
+    -moz-animation-duration: 1s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease;
+
+    -o-animation-name: blinking;
+    -o-animation-direction: normal;
+    -o-animation-duration: 1s;
+    -o-animation-iteration-count: 1;
+    -o-animation-timing-function: ease;
+
+    animation-name: blinking;
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+   	timing-function: ease;
  
 }
 
  .blink1{
-    @include blinking(255, 0, 0, 0.3, 1);
+    @include blinking(0, 255, 0, 0.3, 1);
  }
 
  .blink2{
-    @include blinking(255, 0, 0, 0.3, 1);
+    @include blinking(255, 255, 0, 0.3, 1);
  }
 
  .blink3{
@@ -27,9 +45,3 @@
  .blink4{
     @include blinking(255, 0, 0, 0.3, 1);
  }
-
-   /*var backgroundInterval = setInterval(function(){
-    $div2blink.toggleClass("backgroundRed");
- },1500)
- 
-setInterval( function(){clearInterval(backgroundInterval)}, 3000)*/

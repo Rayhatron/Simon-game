@@ -16,13 +16,26 @@
 	<div id="container">
 		<div id="board">
 			<div id="colorButtons">
-				<div v-bind:class="{ blink1: blink1 }" id="button1"></div>
-				<div v-bind:class="{ blink2: blink2 }" id="button2"></div>
-				<div v-bind:class="{ blink3: blink3 }" id="button3"></div>
-				<div v-bind:class="{ blink4: blink4 }" id="button4"></div>
+				<div v-bind:class="{ blink1: blink1 }" id="button1" v-on:click.self="setUserSequence(1)">
+					<audio id="1" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" ></audio>
+				</div>
+
+				<div v-bind:class="{ blink2: blink2 }" id="button2" v-on:click.self="setUserSequence(2)">
+					<audio id="2" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" ></audio>
+				</div>
+
+				<div v-bind:class="{ blink3: blink3 }" id="button3" v-on:click.self="setUserSequence(3)">
+					<audio id="3" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" ></audio>
+				</div>
+
+				<div v-bind:class="{ blink4: blink4 }" id="button4" v-on:click.self="setUserSequence(4)">
+					<audio id="4" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" ></audio>
+				</div>
+
+				<audio id="5" src="asserts/wrong.mp3"></audio>
 			</div>
 			<div id="mainControls">
-				<h1>Simon</h1>
+				<h1><span>Simon</span>&#174;</h1>
 
 				<div id="io">
 
@@ -60,9 +73,6 @@
 			</div>
 		</div>
 
-		<div>
-		{{message}}
-		</div>
 	</div>
 	
 	
