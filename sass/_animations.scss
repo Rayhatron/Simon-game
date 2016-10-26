@@ -1,7 +1,7 @@
 @mixin blinking($r, $g, $b, $alpha1, $alpha2){
 	@keyframes blinking{
-		0% { background: rgba($r, $g, $b, $alpha1); }
-    	100% { background: rgba($r, $g, $b, $alpha2); }
+		0% { background-color: rgba($r, $g, $b, $alpha1); }
+    	100% { background-color: rgba($r, $g, $b, $alpha2); }
     }
 
     -webkit-animation-name: blinking;
