@@ -12,7 +12,8 @@ var app = new Vue({
     blink4: false,
     sequence: [],
     userSequence: [],
-    randomSquare: 1
+    randomSquare: 1,
+    i: 0
 
   },
   methods: {
@@ -29,6 +30,7 @@ var app = new Vue({
   		if(this.count === 0){
   			this.sequence.push(this.randomSquare);
   			this.count++;
+  			this.blinkSequence();
   		}else{
   			if(this.randomSquare === this.sequence[this.sequence.length-1]){
   				this.chooseSquare();
@@ -36,15 +38,36 @@ var app = new Vue({
   			}else{
   				this.sequence.push(this.randomSquare);
   				this.count++;
+  				this.blinkSequence();
   			}
   		}
   		console.log("sequence is: " + this.sequence);
   		
   	},
+  	blinkSequence: function(){
+  		var self = this;
+  			setTimeout(function(){
+  				self["blink" + self.sequence[self.i]] = true;
+  				self.i++;
+  				if(self.i<self.sequence.length){
+  					self.blinkSequence();
+  				}else{
+  					self.i = 0;
+  					setTimeout(function(){
+		                self.blink1 = false;
+		                self.blink2 = false;
+		                self.blink3 = false;
+		                self.blink4 = false;
+        			}, 1000);
+  				}
+  			}, 1000);
+  				
+            
+  	},
   	startGame: function (){
   		console.log("Starting");
   		this.createSequence();
-  		this.blink1 = true;
+  		/*this.("blink" + "1") = true;
   		this.blink2 = true;
   		this.blink3 = true;
   		this.blink4 = true;
@@ -54,7 +77,7 @@ var app = new Vue({
                 self.blink2 = false;
                 self.blink3 = false;
                 self.blink4 = false;
-            }, 1000);
+            }, 1000);*/
   	}
   }
 
