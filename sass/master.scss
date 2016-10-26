@@ -110,6 +110,12 @@
 		    	border-radius: 100%;
 		    	background: blue;
 		    }
+
+		    #power{
+		    	@include dimensions(60px, 30px);
+		    	margin: 10px 0 0 0;
+		    	text-align: center;
+		    }
 		}
 	}
 

@@ -5,8 +5,8 @@
 	<title>Simon game</title>
 	
 	<link rel="stylesheet" href="css/master.css">
+	<script src="js/vue.js"></script>
 	<script src="js/main.min.js"></script>
-
 	
 	 <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,7 +22,7 @@
 				<div id="button4"></div>
 			</div>
 			<div id="mainControls">
-				<h1>Simon game</h1>
+				<h1>Simon</h1>
 
 				<div id="io">
 
@@ -44,15 +44,30 @@
 					<label for="strictMode">Strict</label>
 				</div>
 				<div id="switchContainer">
-					<label for="switch">off</label>
+					
 					<label class="switch">
-						<input type="checkbox">
+						<input type="checkbox"	id="checkbox" v-model="checked">
 						<div class="slider round"></div>
 					</label>
-					<label for="switch">on</label>
+					
 				</div>
+
+				<div id="power">
+					<label for="slider" v-if="!checked">off</label>
+					<label for="slider" v-if="checked"> on</label>
+				</div>
+
 			</div>
 		</div>
+
+		<div>
+		{{message}}
+		</div>
 	</div>
+	
+	
+
+	
+
 </body>
 </html>
