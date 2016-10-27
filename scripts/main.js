@@ -5,6 +5,7 @@ var app = new Vue({
     message: 'Hello Vue!',
     power: false,
     strictMode: false,
+    gameOn: false,
     count: 0,
     blink1: false,
     blink2: false,
@@ -126,6 +127,7 @@ var app = new Vue({
   	},
   	startGame: function (){
   		console.log("Starting");
+  		this.gameOn = true;
   		this.createSequence();
   		/*this.("blink" + "1") = true;
   		this.blink2 = true;
@@ -147,12 +149,23 @@ var app = new Vue({
 		this.count = 0;
 		this.randomSquare = 0;
 		this.i = 0;
+		this.gameOn = false;
 
 		setTimeout(function(){
 			self.startGame();
 		}, 2000);
   				
+  		},
+  	powerOff: function (){
+  		if(this.power == false){
+	  		this.userSequence = [];
+			this.sequence = [];
+			this.count = 0;
+			this.randomSquare = 0;
+			this.i = 0;
+			this.gameOn = false;
   		}
+  	}
   }
   
 

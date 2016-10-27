@@ -42,11 +42,11 @@
 
 					<div v-bind:class="{ displayOn: power }" id="display" title="display" >{{ count }}</div>
 
-					<input type="button" class="inputs" id="start" title="start" v-on:click="startGame" :disabled="power == false">
+					<input type="button" class="inputs" id="start" title="start" v-on:click="startGame" :disabled="power == false || gameOn == true">
 
 					<div id="strict">
 						<input type="checkbox" v-model="strictMode" disabled>
-						<input type="button" class="inputs" id="strictMode" title="enable strict mode" v-on:click="toggleStrictMode" :disabled="power == false">
+						<input type="button" class="inputs" id="strictMode" title="enable strict mode" v-on:click="toggleStrictMode" :disabled="power == false || gameOn == true">
 					</div>
 
 				</div>
@@ -64,7 +64,7 @@
 					
 					<label class="switch">
 						<input type="checkbox"	id="checkbox" v-model="power">
-						<div class="slider round"></div>
+						<div class="slider round" v-on:click="powerOff"></div>
 					</label>
 					
 				</div>
